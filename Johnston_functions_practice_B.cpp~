@@ -87,8 +87,6 @@ int main()
     assert(fabs(calcArea(3,4) - 12) < E);
     assert(fabs(calcArea(.5,6) - 3) < E);
     assert(fabs(calcArea(-1,4) - 4) < E);    
- 
-    cout << "Ran to here!" << endl;
     
     return 0;
 }
