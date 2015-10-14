@@ -72,9 +72,17 @@ int main()
     stats(0,0,0,2,value,anotherVal); 
     assert(fabs(value - 2) < E);
     assert(fabs(anotherVal - 0.5) < E);
-     
-
-
+    
+    //calcAreaPerimeter(rad,area,perimeter)
+    calcAreaPerimeter(1,value,anotherVal);
+    assert(fabs(value - 3.14) < E);
+    assert(fabs(anotherVal - 6.28) < E);
+    calcAreaPerimeter(.8,value,anotherVal);
+    assert(fabs(value - 2.0096) < E);
+    assert(fabs(anotherVal - 5.024) < E);
+    calcAreaPerimeter(0,value,anotherVal);
+    assert(fabs(value - 0) < E);
+    assert(fabs(anotherVal - 0) < E);
     
     cout << "Ran to here!" << endl;
     
@@ -115,4 +123,12 @@ void stats(double valA, double valB, double valC, double valD, double& valE, dou
     valE = valA + valB + valC + valD;
     valF = (valA + valB + valC + valD)/4.0; 
     return;       
+}
+
+//function that the calculates area and perimeter of a circle.  The function receives one value, radius of type double, and returns the correct values
+void calcAreaPerimeter(double radius, double& area, double& perimeter)
+{
+    area = 3.14 * pow(radius,2);   
+    perimeter = 2 * 3.14 * radius;
+    return;
 }
