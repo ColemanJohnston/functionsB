@@ -84,6 +84,10 @@ int main()
     assert(fabs(value - 0) < E);
     assert(fabs(anotherVal - 0) < E);
     
+    assert(fabs(calcArea(3,4) - 12) < E);
+    assert(fabs(calcArea(.5,6) - 3) < E);
+    assert(fabs(calcArea(-1,4) - 4) < E);    
+ 
     cout << "Ran to here!" << endl;
     
     return 0;
@@ -131,4 +135,9 @@ void calcAreaPerimeter(double radius, double& area, double& perimeter)
     area = 3.14 * pow(radius,2);   
     perimeter = 2 * 3.14 * radius;
     return;
+}
+
+double calcArea(double length, double width)
+{
+    return fabs(length * width);
 }

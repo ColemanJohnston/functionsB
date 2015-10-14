@@ -129,6 +129,8 @@ void stats(double valA, double valB, double valC, double valD, double& valE, dou
 void calcAreaPerimeter(double radius, double& area, double& perimeter)
 {
     area = 3.14 * pow(radius,2);   
-    perimeter = 2 * 3.14 radius;
+    perimeter = 2 * 3.14 * radius;
     return;
 }
+
+double calcArea(double length, double width)
