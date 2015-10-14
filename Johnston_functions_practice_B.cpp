@@ -18,7 +18,7 @@ void computeArea (double valA, double valB, double& valC);
 void computerArea (double valA, double valB, double& valArea, double& valPerimeter);
 
 //function that returns the average and sum of the four parameters that are passed to it  
-void  stats(double valA, double valB, double valC, double valD, double& vale, double& valF);
+void stats(double valA, double valB, double valC, double valD, double& valE, double& valF);
 
 //function that the calculates area and perimeter of a circle.  The function receives one value, radius of type double, and returns the correct values
 void calcAreaPerimeter(double radius, double& area, double& perimeter);
@@ -65,7 +65,16 @@ int main()
     computerArea(0.5,6,value,anotherVal);
     assert(fabs(value - 3) < E);
     assert(fabs(anotherVal - 13) < E);
-  
+ 
+    stats(1,2,3,4,value,anotherVal); //stats(num,num,num,num,sum,avg)
+    assert(fabs(value - 10) < E);
+    assert(fabs(anotherVal - 2.5) < E); 
+    stats(0,0,0,2,value,anotherVal); 
+    assert(fabs(value - 2) < E);
+    assert(fabs(anotherVal - 0.5) < E);
+     
+
+
     
     cout << "Ran to here!" << endl;
     
@@ -99,4 +108,11 @@ void computerArea (double valA, double valB, double& valArea, double& valPerimet
     valArea = valA * valB;
     valPerimeter = (2 * valA) + (2 * valB);
     return;
+}
+//function that returns the average and sum of the four parameters that are passed to it
+void stats(double valA, double valB, double valC, double valD, double& valE, double& valF)
+{
+    valE = valA + valB + valC + valD;
+    valF = (valA + valB + valC + valD)/4.0; 
+    return;       
 }
