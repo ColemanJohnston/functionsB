@@ -34,7 +34,7 @@ int main()
     assert(fabs(feet2Inches(0) - 0) < E);
     assert(fabs(feet2Inches(-1.5) - (-18)) < E);
     
-    double value;
+    double value, anotherVal;
     value = 3;
     feetToInches(value);
     assert(fabs(value - 36) < E);
@@ -55,6 +55,19 @@ int main()
     assert(fabs(value - 20) < E);
     computeArea(0.5,6,value);
     assert(fabs(value - 3) < E);
+    
+    computerArea(1,2,value,anotherVal); //computerArea(height,width,area,perimeter)
+    assert(fabs(value - 2) < E);
+    assert(fabs(anotherVal - 5) < E);
+    computerArea(3,4,value,anotherVal); 
+    assert(fabs(value - 12) < E);
+    assert(fabs(anotherVal - 14) < E);
+    computerArea(0.5,6,value,anotherVal);
+    assert(fabs(value - 3) < E);
+    assert(fabs(anotherVal - 13) < E);
+  
+    
+    cout << "Ran to here!" << endl;
     
     return 0;
 }
@@ -78,5 +91,12 @@ double computeRectangle(double valA, double valB)
 void computeArea (double valA, double valB, double& valC)
 {
     valC = valA * valB;
+    return;
+}
+
+void computerArea (double valA, double valB, double& valArea, double& valPerimeter)
+{
+    valArea = valA * valB;
+    valPerimeter = (2 * valA) + (2 * valB);
     return;
 }
