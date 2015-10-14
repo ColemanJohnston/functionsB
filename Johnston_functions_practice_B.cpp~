@@ -56,8 +56,6 @@ int main()
     computeArea(0.5,6,value);
     assert(fabs(value - 3) < E);
     
-    cout << "Ran to here!" << endl;
-    
     return 0;
 }
 
